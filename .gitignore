@@ -8,3 +8,6 @@
 
 # executables
 *.exe
+
+# data
+*.tsv
