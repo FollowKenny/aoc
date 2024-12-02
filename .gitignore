@@ -1,0 +1,10 @@
+# vscode stuff
+.vscode
+
+# c stuffs
+*.obj
+*.pdb
+*.ilk
+
+# executables
+*.exe
