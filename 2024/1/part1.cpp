@@ -1,3 +1,4 @@
+#include "utils.h"
 #include <string>
 #include <fstream>
 #include <iostream>
@@ -5,12 +6,6 @@
 #include <sstream>
 #include <algorithm>
 using namespace std;
-
-vector<string> splitOnSpaces(const string &input)
-{
-    std::istringstream stream(input);
-    return {istream_iterator<string>(stream), istream_iterator<string>()};
-}
 
 int main()
 {

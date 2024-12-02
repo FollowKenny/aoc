@@ -2,16 +2,10 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
-#include <sstream>
+#include "utils.h"
 #include <algorithm>
 #include <unordered_map>
 using namespace std;
-
-vector<string> splitOnSpaces(const string &input)
-{
-    std::istringstream stream(input);
-    return {istream_iterator<string>(stream), istream_iterator<string>()};
-}
 
 int main()
 {
