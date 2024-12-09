@@ -1,15 +1,20 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-#include <vector>
 #include <sstream>
 #include <string>
+#include <vector>
+
 using namespace std;
 
-inline vector<string> splitOnSpaces(const string &input)
-{
-    istringstream stream(input);
-    return {istream_iterator<string>(stream), istream_iterator<string>()};
+inline vector<int> splitOnSpaces(const string &input) {
+  stringstream stream(input);
+  string s;
+  vector<int> res;
+  while (stream >> s) {
+    res.push_back(stoi(s));
+  }
+  return res;
 }
 
 #endif

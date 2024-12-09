@@ -5,10 +5,12 @@
 #include "utils.h"
 #include <algorithm>
 #include <unordered_map>
+#include <chrono>
 using namespace std;
 
 int main()
 {
+    const auto start = chrono::high_resolution_clock::now();
     string line;
     ifstream myfile("data.tsv");
     std::unordered_map<int, int> team1Counters;
@@ -34,7 +36,10 @@ int main()
         {
             result += key * team2Counters[key] * value;
         }
-        cout << result;
+        cout << result << endl;
+        const auto end = chrono::steady_clock::now();
+        chrono::duration<double> elapsed = end - start;
+        cout << "Time in seconds: " << elapsed.count() << endl;
     }
 
     else

@@ -5,10 +5,12 @@
 #include <vector>
 #include <sstream>
 #include <algorithm>
+#include <chrono>
 using namespace std;
 
 int main()
 {
+    const auto start = chrono::high_resolution_clock::now();
     string line;
     ifstream myfile("data.tsv");
     vector<int> team1Locations;
@@ -34,7 +36,10 @@ int main()
         {
             result += abs(team1Locations[i] - team2Locations[i]);
         }
-        cout << result;
+        cout << result << endl;
+        const auto end = chrono::steady_clock::now();
+        chrono::duration<double> elapsed = end - start;
+        cout << "Time in seconds: " << elapsed.count() << endl;
     }
 
     else
