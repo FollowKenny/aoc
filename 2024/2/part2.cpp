@@ -6,6 +6,7 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
+#include <cmath>
 
 #include "utils.h"
 using namespace std;
@@ -57,9 +58,9 @@ int main() {
     myfile.close();
 
     cout << result << endl;
-    const auto end = chrono::steady_clock::now();
+    const auto end = chrono::high_resolution_clock::now();
     const auto time_elapsed =
-        std::chrono::duration_cast<std::chrono::microseconds>(end - start)
+        chrono::duration_cast<std::chrono::microseconds>(end - start)
             .count();
     cout << "Time in us: " << time_elapsed << endl;
   } else
