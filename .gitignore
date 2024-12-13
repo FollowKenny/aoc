@@ -11,6 +11,7 @@
 
 # data
 *.tsv
+*.txt
 
 # compiled dir
 build/
